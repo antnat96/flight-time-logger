@@ -4,11 +4,22 @@ body {
 .bot-line {
     border-bottom: 5px solid black;
 }
+header, main, footer {
+    padding-left: 300px;
+}
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
 .hold-height {
     min-height: 300px !important;
 }
 .send-right {
     text-align:right;
+}
+#sidebar-div {
+    max-width: 20vw !important;
 }
 .top-line {
     border-top: 5px solid black;

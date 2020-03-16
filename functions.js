@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    
     function populateTable() {
         // Add the information to the table
         // var row = document.getElementById("flights_table").insertRow(1);
