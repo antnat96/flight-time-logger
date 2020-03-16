@@ -1,27 +1,5 @@
 $(document).ready(function() {
     
-    function populateTable() {
-        // Add the information to the table
-        // var row = document.getElementById("flights_table").insertRow(1);
-        // var idCell = row.insertCell(0);
-        // var firstNameCell = row.insertCell(1);
-        // var lastNameCell = row.insertCell(2);
-        // var garlicCell = row.insertCell(3);
-        // var shadowCell = row.insertCell(4);
-        // var complexionCell = row.insertCell(5);
-        // var accentCell = row.insertCell(6);
-        // var vampireOrHuman = row.insertCell(7);
-        // var deleteCell = row.insertCell(8);
-        // idCell.innerHTML = "";
-        // firstNameCell.innerHTML = firstName;
-        // lastNameCell.innerHTML = lastName;
-        // garlicCell.innerHTML = (garlic === true) ? "Yes" : "No";
-        // shadowCell.innerHTML = (shadow === true) ? "Yes" : "No";
-        // complexionCell.innerHTML = (complexion === true) ? "Yes" : "No";
-        // accentCell.innerHTML = (accent === true) ? "Yes" : "No";
-        // deleteCell.innerHTML = "<button class= 'remove-student-button btn btn-primary'>Delete</button>";
-    }; populateTable();
-    
     // Handler for the "Add Flight" button
     $("#add-flight-button").on("click", function() {
         var elements = document.querySelectorAll("#flight-info input");
