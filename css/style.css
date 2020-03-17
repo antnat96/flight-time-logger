@@ -15,6 +15,11 @@ header, main, footer {
 .hold-height {
     min-height: 300px !important;
 }
+li :hover {
+    background-color: aliceblue;
+    box-shadow: 5px 5px 8px 2px grey;
+    transition-duration: 500ms;
+}
 .main-container {
     margin-left:0px !important;
 }
@@ -24,10 +29,16 @@ header, main, footer {
 #sidebar-div {
     margin-top: 12vh;
     max-width: 20vw !important;
-    box-shadow: 5px 5px 2px grey;
+    box-shadow: 5px 5px 8px 2px grey;
 }
 .sidenav-container {
     z-index: 10 !important;
+}
+.sidebar-min-width > * {
+    min-width: 130px !important;
+}
+th {
+    font-size: 12px;
 }
 .top-line {
     border-top: 5px solid black;
