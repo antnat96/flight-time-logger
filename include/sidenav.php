@@ -16,8 +16,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="addRemoveFlights.php">
-                Add/Remove Flights
+            <a class="nav-link" href="addFlight.php">
+                Add A Flight
             </a>
         </li>
         <li class="nav-item">

@@ -23,7 +23,7 @@
         </div>
 
         <div class = "col-md-9 hold-height">
-          <h1>Add or Remove Flights</h1>
+          <h1>Add A Flight</h1>
             <br>
             <form id = "aircraft-info" class = "pop flight-form">
               <h3>Aircraft Information</h3>
@@ -120,7 +120,9 @@
                 </div>
               </div>
             </form>
+
           <button id = "add-flight-button" class="btn btn-primary add-flt-btn">Add Flight</button>
+          
         </div>
       </div>
     </div>
