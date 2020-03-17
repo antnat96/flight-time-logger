@@ -25,7 +25,7 @@
         <div class = "col-md-9 hold-height">
           <h1>All Flights</h1>
           <div id = "table_div" class = "top-pad">
-            <table id = "flights_table" class="table table-striped">
+            <table id = "flights_table" class="table table-striped pop">
               <thead>
                 <tr>
                   <th scope="col">ID</th>
@@ -37,9 +37,32 @@
                   <th scope="col">Cargo Wt (Lbs)</th>
                   <th scope="col">Aircraft</th>
                   <th scope="col">Tail Number</th>
-                  <th scope="col"></th>
                 </tr>
               </thead>
+              <tbody>
+              <tr>
+                  <td>1</td>
+                  <td>2/2/20</td>
+                  <td>Charlotte, NC</td>
+                  <td>2/2/20</td>
+                  <td>Queens, NY</td>
+                  <td>8.6</td>
+                  <td>25000</td>
+                  <td>C-17</td>
+                  <td>04-0249</td>
+                </tr>                
+                <tr>
+                  <td>1</td>
+                  <td>2/2/20</td>
+                  <td>Charlotte, NC</td>
+                  <td>2/2/20</td>
+                  <td>Queens, NY</td>
+                  <td>8.6</td>
+                  <td>25000</td>
+                  <td>C-17</td>
+                  <td>04-0249</td>
+                </tr>
+              </tbody>
             </table>
           </div>            
         </div>

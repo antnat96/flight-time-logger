@@ -25,29 +25,102 @@
         <div class = "col-md-9 hold-height">
           <h1>Add or Remove Flights</h1>
             <br>
-            <form id = "flight-info">
+            <form id = "aircraft-info" class = "pop flight-form">
+              <h3>Aircraft Information</h3>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="departureDate">Departure Date</label>
-                  <input type="text" class="form-control" id="departureDate" placeholder = "1/1/2020">
+                  <label for="aircraftType">Aircraft Type</label>
+                  <input type="text" class="form-control" id="aircraftType" placeholder = "C-17 Globemaster">
                 </div>
                 <div class="form-group col-md-6">
+                  <label for="tailNumber">Tail Number</label>
+                  <input type="text" class="form-control" id="tailNumber" placeholder = "00-0000">
+                </div>
+              </div>                
+            </form>
+            <br>
+            <form id = "flight-info" class = "pop flight-form">
+              <h3>Flight Information</h3>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="departureDate">Departure Date</label>
+                  <input type="date" class="form-control" id="departureDate" placeholder = "1/1/2020">
+                </div>
+                <div class="form-group col-md-4">
                   <label for="departureLocation">Departure Location</label>
                   <input type="text" class="form-control" id="departureLocation" placeholder = "Charlotte, NC">
                 </div>
+                <div class="form-group col-md-4">
+                  <label for="departureAirportCode">Departure Airport Code</label>
+                  <input type="text" class="form-control" id="departureLocation" placeholder = "CLT">
+                </div>
               </div>
-              <div class = "form-row">
+              <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="arrivalDate">Arrival Date</label>
-                  <input type="text" class="form-control" id="arrivalDate" placeholder = "1/1/2020">
+                  <label for="departureTimeLocal">Departure Time (Local)</label>
+                  <input type="time" class="form-control" id="departureTimeLocal" placeholder = "0500">
                 </div>
                 <div class="form-group col-md-6">
+                  <label for="departureTimeZulu">Departure Time (Zulu)</label>
+                  <input type="time" class="form-control" id="departureTimeZulu" placeholder = "0900">
+                </div>
+              </div>
+              <div class = "form-row">
+                <div class="form-group col-md-4">
+                  <label for="arrivalDate">Arrival Date</label>
+                  <input type="date" class="form-control" id="arrivalDate" placeholder = "1/1/2020">
+                </div>
+                <div class="form-group col-md-4">
                   <label for="arrivalLocation">Arrival Location</label>
                   <input type="text" class="form-control" id="arrivalLocation" placeholder = "Memphis, TN">
                 </div>
-              </div>                
-          </form>
-          <button id = "add-flight-button" class="btn btn-primary">Add Flight</button>
+                <div class="form-group col-md-4">
+                  <label for="arrivalAirportCode">Arrival Airport Code</label>
+                  <input type="text" class="form-control" id="arrivalLocation" placeholder = "MEM">
+                </div>                
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="arrivalTimeLocal">Arrival Time (Local)</label>
+                  <input type="time" class="form-control" id="arrivalTimeLocal" placeholder = "0700">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="arrivalTimeZulu">Arrival Time (Zulu)</label>
+                  <input type="time" class="form-control" id="arrivalTimeZulu" placeholder = "1100">
+                </div>
+              </div>
+            </form>
+            <br>
+            <form id = "cargo-info" class = "pop flight-form">
+              <h3>Cargo Information</h3>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="itemsNumber">Number of Items</label>
+                  <input type="number" class="form-control" id="itemsNumber" placeholder = "0">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="weightPounds">Weight (Lbs)</label>
+                  <input type="number" class="form-control" id="weightPounds" placeholder = "0">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="weightKilograms">Weight (Kg)</label>
+                  <input type="number" class="form-control" id="weightKilograms" placeholder = "0">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="loadingAgents">Loading Agents</label>
+                  <input type="text" class="form-control" id="loadingAgents" placeholder = "Loader 1, Loader 2, Loader 3...">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="cargoDescription">Cargo Description</label>
+                  <input type="text" class="form-control cargo-desc" id="cargoDescription" placeholder = "Some notes about the cargo...">
+                </div>
+              </div>
+            </form>
+          <button id = "add-flight-button" class="btn btn-primary add-flt-btn">Add Flight</button>
         </div>
       </div>
     </div>

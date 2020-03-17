@@ -1,8 +1,18 @@
+.add-flt-btn {
+    margin-top: 10px;
+}
 body {
     background-color: silver;
 }
 .bot-line {
     border-bottom: 5px solid black;
+}
+.cargo-desc {
+    min-height: 100px;
+}
+.flight-form {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 header, main, footer {
     padding-left: 300px;
@@ -22,6 +32,9 @@ li :hover {
 }
 .main-container {
     margin-left:0px !important;
+}
+.pop {
+    box-shadow: 5px 5px 8px 2px grey;
 }
 .send-right {
     text-align:right;
