@@ -11,7 +11,6 @@
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="js/functions.js"></script>
   </head>
 
   <body>
@@ -126,5 +125,31 @@
         </div>
       </div>
     </div>
+    <script type = "text/javascript">
+      $(document).ready(function() {
+          
+          // Handler for the "Add Flight" button
+          $("#add-flight-button").on("click", function() {
+              var elements = document.querySelectorAll("#flight-info input");
+              var flightInfo = [];
+              for (var i = 0, element; element = elements[i++];) {
+                  flightInfo.push(element.value);
+              }
+              let testInfo = {"test":flightInfo[0],"test1":flightInfo[1],"test2":flightInfo[2],"test3":flightInfo[3]};
+              $.ajax({
+                  url: "https://jsonbox.io/box_1aa2eecea9560cd80c48",
+                  data: JSON.stringify(testInfo),
+                  type: "POST",
+                  dataType: "json",
+                  contentType: "application/json"
+              }).done(function(result){
+                  console.log(result);
+              }).fail(function(result) {
+                  console.log(result);
+              });
+          })
+
+      });
+    </script>
   </body>
 </html>
