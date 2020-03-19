@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class = "container main-container">
+    <div class = "main-container">
       <div class = "row">
 
         <div class = "col-md-3 sidenav-container sidebar-min-width">
@@ -27,7 +27,6 @@
             <table id = "flights_table" class="table table-striped pop">
               <thead>
                 <tr>
-                  <th scope="col">ID</th>
                   <th scope="col">Departure Date</th>
                   <th scope="col">Departure Location</th>
                   <th scope="col">Arrival Date</th>
@@ -59,25 +58,58 @@
           contentType: "application/json"
         }).done(function(result){
           console.log(result);
-          //populateTable(result);
+          populateTable(result);
         }).fail(function(result) {
-          $("#test-paragraph").innerHTML = result;
+          console.log("Failed " + result);
         });
 
 
-        // function populateTable(info) {
-        //   if (info.flights != undefined && info.flights != null) {
-        //     info.foreach(function() {
-        //       let newRow = document.createElement("tr");
-        //       $("#flight-table-tbody").append(newRow);
-        //       let id = this.id;
-        //       let id = this.id;
-        //     })
-        //   }
-        //   else {
-        //     return window.alert("No flight records");
-        //   }
-        // }
+        function populateTable(info) {
+
+          if (info != undefined && info != null && info[0] != []) {
+            for (let i = 0; i < info.length; i++) {
+
+              let table = document.getElementById("flights_table");
+              let newRow = table.insertRow(1);
+
+              let departureDate = info[i].departure.date;
+                let departureDateCell = newRow.insertCell(0);
+                departureDateCell.innerHTML = departureDate;
+
+              let departureLocation = info[i].departure.location;
+                let departureLocationCell = newRow.insertCell(1);
+                departureLocationCell.innerHTML = departureLocation;
+
+              let arrivalDate = info[i].arrival.date;
+                let arrivalDateCell = newRow.insertCell(2);
+                arrivalDateCell.innerHTML = arrivalDate;
+
+              let arrivalLocation = info[i].arrival.location;
+                let arrivalLocationCell = newRow.insertCell(3);
+                arrivalLocationCell.innerHTML = arrivalLocation;
+
+              let flightTime = "8.5 hr";
+                let flightTimeCell = newRow.insertCell(4);
+                flightTimeCell.innerHTML = flightTime;
+
+              let cargoWtLbs = info[i].cargo.weight_lbs;
+                let cargoWtLbsCell = newRow.insertCell(5);
+                cargoWtLbsCell.innerHTML = cargoWtLbs;
+
+              let aircraftType = info[i].aircraft.type;
+                let aircraftTypeCell = newRow.insertCell(6);
+                aircraftTypeCell.innerHTML = aircraftType;
+
+              let tailNumber = info[i].aircraft.tail_num;
+                let tailNumberCell = newRow.insertCell(7);
+                tailNumberCell.innerHTML = tailNumber;
+
+            }
+          }
+          else {
+            return window.alert("No flight records");
+          }
+        }
 
         // Handle the "Delete" button
         // $(document).on('click', '.remove-student-button', function(){

@@ -3,7 +3,7 @@
     margin-bottom: 10px;
 }
 body {
-    background-color: silver;
+    background-color: white;
 }
 .bot-line {
     border-bottom: 5px solid black;
@@ -32,10 +32,12 @@ li :hover {
     transition-duration: 500ms;
 }
 .main-container {
-    margin-left:0px !important;
+    margin-left:25px !important;
+    margin-right: 25px !important;
 }
 .pop {
     box-shadow: 5px 5px 8px 2px grey;
+    background-color: silver;
 }
 .send-right {
     text-align:right;
@@ -44,6 +46,7 @@ li :hover {
     margin-top: 12vh;
     max-width: 20vw !important;
     box-shadow: 5px 5px 8px 2px grey;
+    background-color: silver;
 }
 .sidenav-container {
     z-index: 10 !important;
@@ -51,8 +54,10 @@ li :hover {
 .sidebar-min-width > * {
     min-width: 130px !important;
 }
-th {
+td, th {
     font-size: 12px;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
 }
 .top-line {
     border-top: 5px solid black;
