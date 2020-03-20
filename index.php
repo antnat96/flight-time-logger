@@ -28,25 +28,21 @@
               <thead>
                 <tr>
                   <th scope="col">ID</th>
-                  <th scope="col">Departure Date</th>
-                  <th scope="col">Departure Location</th>
-                  <th scope="col">Arrival Date</th>
-                  <th scope="col">Arrival Location</th>
-                  <th scope="col">Flight Time</th>
-                  <th scope="col">Cargo Wt (Lbs)</th>
-                  <th scope="col">Aircraft Type</th>
-                  <th scope="col">Tail Number</th>
+                  <th scope="col">Departure<br>Date</th>
+                  <th scope="col">Departure<br>Location</th>
+                  <th scope="col">Arrival<br>Date</th>
+                  <th scope="col">Arrival<br>Location</th>
+                  <th scope="col">Flight<br>Time</th>
+                  <th scope="col">Cargo Wt<br>(Lbs)</th>
+                  <th scope="col">Aircraft<br>Type</th>
+                  <th scope="col">Tail<br>Number</th>
+                  <th scope = "col"></th>
                 </tr>
               </thead>
               <tbody id = "flight-table-tbody">
               </tbody>
             </table>
           </div>            
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col-md-12">
-          <button id = "delete-all-button" class="btn btn-primary del-flt-btn">Delete All Flights</button>
         </div>
       </div>
     </div>
@@ -108,43 +104,37 @@
                 cell.innerHTML = relevantInfo[j];
               }
 
+              // Add delete button to last cell
+              cell = newRow.insertCell(relevantInfo.length);
+
+              // And assign it the unique row id as the id attribute
+              cell.innerHTML = "<button id = " + info[i].id + " class = 'btn btn-primary del-flt-btn'>Delete</button>";
+
               // Unset the relevantInfo array so it can be refilled on next loop
               relevantInfo = [];
 
             }
+            // Delete flights from the JSON box
+            $(".del-flt-btn").on("click", function() {
+              let id = $(this).attr("id");
+              $.ajax({
+                url: "https://jsonbox.io/box_1aa2eecea9560cd80c48?q=id:" + id,
+                type: "DELETE",
+                dataType: "json",
+                contentType: "application/json"
+              }).done(function(result){
+                location.reload();
+              }).fail(function(result) {
+                window.alert("Oops! Something went wrong! Please try again later.");
+              });
+
+            })
+
           }
           else {
             return window.alert("No flight records");
           }
         }
-
-        // Delete flights from the JSON box
-        $(".del-flt-btn").on("click", function() {
-          let id = "deyk6";
-
-          $.ajax({
-            url: "https://jsonbox.io/box_1aa2eecea9560cd80c48?q=id:" + id,
-            type: "DELETE",
-            dataType: "json",
-            contentType: "application/json"
-          }).done(function(result){
-            console.log(result);
-          }).fail(function(result) {
-            console.log(result);
-          });
-
-        })
-        // Handle the "Delete" button
-        // $(document).on('click', '.remove-student-button', function(){
-        //     // Get the closest row element's index and delete it
-        //     var table = document.getElementById("flights_table");
-        //     let row = $(this).closest('tr').index();
-        //     var vampireOrHuamnCell = table.rows[row].cells[7].innerHTML;
-        //     if(vampireOrHuamnCell == "Human"){humans-=1}
-        //     else{vampires-=1}
-        //     //console.log(document.getElementById("flights_table").rows[1].innerHTML);
-        //     (row !== null && row !== undefined) ? document.getElementById("flights_table").deleteRow(row) : window.alert("Oops! Having issues removing that student.");
-        // });
       });
     </script>
   </body>

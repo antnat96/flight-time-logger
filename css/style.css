@@ -11,9 +11,8 @@ body {
 .cargo-desc {
     min-height: 100px;
 }
-.del-flt-btn {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.delete-column {
+    max-width: 80px !important;
 }
 .flight-form {
     padding-left: 8px;

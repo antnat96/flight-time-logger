@@ -213,9 +213,9 @@
               dataType: "json",
               contentType: "application/json"
           }).done(function(result){
-              console.log(result);
+            $(':input').val('');
           }).fail(function(result) {
-              console.log(result);
+            window.alert("Oops! Something went wrong! Please try again later.");
           });
         })
       });
